@@ -1,0 +1,31 @@
+{
+  "name": "storefront-playground",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "rollup": "^4.14.3",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.2.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@vue-storefront/integrations-tsconfig": "^0.0.4",
+    "@vue-storefront/rollup-config": "^0.0.8"
+  }
+}
