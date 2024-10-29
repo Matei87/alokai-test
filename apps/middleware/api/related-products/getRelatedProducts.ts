@@ -1,11 +1,11 @@
-import type { FakeStoreIntegrationContext } from '../../../../packages/fakestore/src/types/context/index';
-import { Endpoints as StoryblokEndpoints } from '@vue-storefront/storyblok-api';
+// import type { FakeStoreIntegrationContext } from "@vue-storefront/fakestore-api";
+// import { Endpoints as StoryblokEndpoints } from '@vue-storefront/storyblok-api';
 
 export async function getRelatedProducts(
-  context: FakeStoreIntegrationContext,
+  context: any,
   params: { productId: string }
 ) {
-  const storyblokClient = context.getApiClient<StoryblokEndpoints>('storyblok');
+  const storyblokClient = context.getApiClient('storyblok');
 
   try {
     const cmsContent = await storyblokClient.api.getContent({
