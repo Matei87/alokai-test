@@ -1,11 +1,11 @@
-import { FakeStoreIntegrationContext } from "@vue-storefront/fakestore-api";
-import { Endpoints as StoryblokEndpoints } from "@vue-storefront/storyblok-api";
+import type { FakeStoreIntegrationContext } from '../../../../packages/fakestore/src/types/context/index';
+import { Endpoints as StoryblokEndpoints } from '@vue-storefront/storyblok-api';
 
 export async function getRelatedProducts(
   context: FakeStoreIntegrationContext,
-  params: { productId: string },
+  params: { productId: string }
 ) {
-  const storyblokClient = context.getApiClient<StoryblokEndpoints>("storyblok");
+  const storyblokClient = context.getApiClient<StoryblokEndpoints>('storyblok');
 
   try {
     const cmsContent = await storyblokClient.api.getContent({
@@ -13,11 +13,11 @@ export async function getRelatedProducts(
     });
 
     const productIds: string[] = cmsContent.body.map(
-      (item: { product_id: string }) => item.product_id,
+      (item: { product_id: string }) => item.product_id
     );
 
     const promises = productIds.map((productId: string) =>
-      context.api.getProduct({ code: productId }),
+      context.api.getProduct({ code: productId })
     );
 
     const relatedProducts = await Promise.all(promises);
