@@ -1,9 +1,8 @@
-import consola from "consola";
-import type { FakeStoreIntegrationContext } from "../../types";
+import consola from 'consola';
 
 /**
  * Get all categories
- * 
+ *
  * @remarks
  * Check out the Fakestore API documentation for more information.
  * {@link https://fakestoreapi.com/docs}
@@ -20,20 +19,18 @@ import type { FakeStoreIntegrationContext } from "../../types";
  *
  * const product = await sdk.fakestore.getCategories();
  * ```
- * @returns 
+ * @returns
  */
-export const getCategories = async (
-  context: FakeStoreIntegrationContext
-): Promise<{ data: string[] }> => {
+export const getCategories = async (): Promise<{ data: string[] }> => {
   try {
     const categories = await fetch(
-      "https://fakestoreapi.com/products/categories"
+      'https://fakestoreapi.com/products/categories'
     );
     const data = await categories.json();
 
     return { data };
   } catch (error) {
-    consola.error("Error while fetching categories", error);
+    consola.error('Error while fetching categories', error);
     return { data: [] };
   }
 };

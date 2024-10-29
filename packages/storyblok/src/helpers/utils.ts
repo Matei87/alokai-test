@@ -2,7 +2,7 @@ import type { Content, Image } from "../types";
 
 export const buildImageObject = (
   items: Image[],
-  actions: { replace: boolean } = { replace: false }
+  actions: { replace: boolean } = { replace: false },
 ): Image[] | Image => {
   return items.map((item: { image }) => {
     const { replace } = actions;
@@ -29,7 +29,7 @@ export const extractNestedComponents: (
       }
     | Content[]
     | Content,
-  stories?: boolean
+  stories?: boolean,
 ) => void | boolean = (data: Content, stories = false) => {
   if (data.content) {
     extractNestedComponents(data.content);

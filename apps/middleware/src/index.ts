@@ -13,7 +13,7 @@ async function runApp() {
         origin: true,
         credentials: true,
       },
-    }
+    },
   );
 
   app.listen(port, "", () => {

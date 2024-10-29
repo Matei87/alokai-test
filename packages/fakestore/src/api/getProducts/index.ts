@@ -49,7 +49,7 @@ interface GetProductsParams {
  */
 export const getProducts = async (
   context: FakeStoreIntegrationContext,
-  params?: GetProductsParams
+  params?: GetProductsParams,
 ): Promise<{ data: Product[] }> => {
   const { limit = 10, sort = "asc" } = params.options || {};
 

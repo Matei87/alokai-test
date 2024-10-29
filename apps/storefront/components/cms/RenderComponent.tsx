@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import type { AgnosticCmsComponent } from './types';
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+import type { AgnosticCmsComponent } from "./types";
 
-const Hero = dynamic(() => import('./Hero'));
-const Banner = dynamic(() => import('./Banner'));
-const ProductSlider = dynamic(() => import('./ProductSlider'));
+const Hero = dynamic(() => import("./Hero"));
+const Banner = dynamic(() => import("./Banner"));
+const ProductSlider = dynamic(() => import("./ProductSlider"));
 
 export type ProductComponentProps = {
   id: number;

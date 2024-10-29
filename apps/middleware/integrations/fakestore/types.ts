@@ -9,4 +9,5 @@ export type RelatedProductsEndpoints = WithoutContext<
   RelatedProductsExtension["extendApiMethods"]
 >;
 
-export type ExtendedFakeStoreEndpoints = FakeStoreEndpoints & RelatedProductsEndpoints;
+export type ExtendedFakeStoreEndpoints = FakeStoreEndpoints &
+  RelatedProductsEndpoints;

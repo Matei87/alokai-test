@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import ProductDetails from "@/components/ui/ProductDetails";
-import { getSdk } from "@/sdk/sdk.config"
+import { getSdk } from "@/sdk/sdk.config";
 import GalleryWithBullets from "@/components/ui/Gallery";
 import ProductCardVertical from "@/components/ui/ProductCard";
 
@@ -10,16 +10,20 @@ export default async function Page({ params }: { params: { code: string } }) {
 
   const { data: product } = await sdk.fakestore.getProduct({ code });
 
-  const relatedProducts = await sdk.fakestore.getRelatedProducts({ productId: code });
+  const relatedProducts = await sdk.fakestore.getRelatedProducts({
+    productId: code,
+  });
 
   if (product === null) {
-    redirect('/not-found');
+    redirect("/not-found");
   }
 
-  const images = [{
-    imageSrc: product.image,
-    alt: product.title,
-  }]
+  const images = [
+    {
+      imageSrc: product.image,
+      alt: product.title,
+    },
+  ];
 
   return (
     <section className="flex flex-col gap-12 p-12">
@@ -31,7 +35,9 @@ export default async function Page({ params }: { params: { code: string } }) {
         <section className="flex flex-col gap-12">
           <h2 className="text-3xl font-bold">Related products</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-            {relatedProducts.map(product => <ProductCardVertical key={product.id} product={product} />)}
+            {relatedProducts.map((product) => (
+              <ProductCardVertical key={product.id} product={product} />
+            ))}
           </div>
         </section>
       )}

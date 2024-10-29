@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {
   SfButton,
   SfIconShoppingCart,
-  SfIconPerson,
   SfInput,
   SfIconSearch,
   SfIconMenu,

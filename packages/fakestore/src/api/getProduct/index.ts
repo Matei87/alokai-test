@@ -31,11 +31,11 @@ interface GetProductsParams {
  */
 export const getProduct = async (
   context: FakeStoreIntegrationContext,
-  params: GetProductsParams
+  params: GetProductsParams,
 ): Promise<{ data: Product }> => {
   try {
     const product = await fetch(
-      `https://fakestoreapi.com/products/${params?.code}`
+      `https://fakestoreapi.com/products/${params?.code}`,
     );
     const data = await product.json();
 

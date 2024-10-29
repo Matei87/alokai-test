@@ -1,10 +1,10 @@
-import RenderComponent from '@/components/cms/RenderComponent';
-import type { AgnosticCmsComponent } from '@/components/cms/types';
-import { getSdk } from '@/sdk/sdk.config';
+import RenderComponent from "@/components/cms/RenderComponent";
+import type { AgnosticCmsComponent } from "@/components/cms/types";
+import { getSdk } from "@/sdk/sdk.config";
 
 export default async function Page() {
   const content = await getSdk().storyblok.getContent({
-    url: 'home',
+    url: "home",
   });
   const { data } = await getSdk().fakestore.getProducts({
     options: {
@@ -14,7 +14,7 @@ export default async function Page() {
 
   function renderComponents(
     components: AgnosticCmsComponent[] = [],
-    hidden = false
+    hidden = false,
   ) {
     return components.map((component) => (
       <RenderComponent
@@ -26,5 +26,5 @@ export default async function Page() {
     ));
   }
 
-  return <main className='px-12'>{renderComponents(content.body, true)}</main>;
+  return <main className="px-12">{renderComponents(content.body, true)}</main>;
 }

@@ -7,6 +7,6 @@ export interface Product {
   rating: {
     rate: number;
     count: number;
-  },
+  };
   category: string;
 }

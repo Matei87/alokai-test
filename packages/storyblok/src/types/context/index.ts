@@ -10,4 +10,3 @@ export type StoryblockIntegrationContext = IntegrationContext<
   MiddlewareConfig,
   Endpoints
 >;
-

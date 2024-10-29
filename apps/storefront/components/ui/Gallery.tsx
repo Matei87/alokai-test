@@ -1,8 +1,13 @@
 "use client";
-import { useState } from 'react';
-import { SfScrollable, SfButton, SfIconChevronLeft, SfIconChevronRight } from '@storefront-ui/react';
-import classNames from 'classnames';
-import Image from 'next/image';
+import { useState } from "react";
+import {
+  SfScrollable,
+  SfButton,
+  SfIconChevronLeft,
+  SfIconChevronRight,
+} from "@storefront-ui/react";
+import classNames from "classnames";
+import Image from "next/image";
 
 interface GalleryWithBulletsProps {
   images: {
@@ -62,7 +67,6 @@ export default function GalleryWithBullets({
               src={imageSrc}
               width={600}
               height={450}
-
               draggable="false"
             />
           </div>
@@ -77,8 +81,11 @@ export default function GalleryWithBullets({
               aria-current={activeIndex === index}
               type="button"
               className={classNames(
-                'w-full relative mt-1 border-b-4 transition-colors focus-visible:outline focus-visible:outline-offset-0',
-                { 'border-primary-700': activeIndex === index, 'border-gray-200': activeIndex !== index },
+                "w-full relative mt-1 border-b-4 transition-colors focus-visible:outline focus-visible:outline-offset-0",
+                {
+                  "border-primary-700": activeIndex === index,
+                  "border-gray-200": activeIndex !== index,
+                },
               )}
               onClick={() => setActiveIndex(index)}
             />
