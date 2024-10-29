@@ -1,4 +1,5 @@
 import consola from 'consola';
+import type { FakeStoreIntegrationContext } from '../../types';
 
 /**
  * Get all categories
@@ -21,7 +22,9 @@ import consola from 'consola';
  * ```
  * @returns
  */
-export const getCategories = async (): Promise<{ data: string[] }> => {
+export const getCategories = async (
+  _context: FakeStoreIntegrationContext
+): Promise<{ data: string[] }> => {
   try {
     const categories = await fetch(
       'https://fakestoreapi.com/products/categories'
