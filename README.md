@@ -20,16 +20,10 @@ Integrations packages are located in the `packages` directory.
 
 ## Getting Started
 
-First, clone the repository:
+install the dependencies:
 
 ```bash
-git clone git@github.com:vuestorefront/storefront-playground.git
-```
-
-Then, install the dependencies:
-
-```bash
-cd storefront-playground
+cd alokai-test
 npm install
 ```
 
